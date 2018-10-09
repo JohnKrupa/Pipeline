@@ -1,15 +1,15 @@
 pipeline {
     agent any
         stages {
-            stage('compile') {
+            stage('maven compile') {
                 withmaven (maven : 'Apache Maven 3.5.2')
                     echo 'maven compile'
             }
-       stage('test') {
+       stage('maven test') {
                 withmaven (maven : 'Apache Maven 3.5.2')
                     echo 'maven testing'
             }
-        stage('deploy') {
+        stage('maven deploy') {
                 withmaven (maven : 'Apache Maven 3.5.2')
                     echo 'maven deploy'
             }
