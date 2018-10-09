@@ -1,22 +1,22 @@
 pipeline {
     agent any
         stages {
-            stage('compile stage') {
+            stage('compile') {
                 steps {
                 withmaven (maven : 'Apache Maven 3.5.2')
                     sh 'mvn clean compile'
             }
                 }
-       stage('test stage') {
+       stage('test') {
            steps {     
            withmaven (maven : 'Apache Maven 3.5.2')
                     sh 'mvn testing'
             }
        }
-        stage('deploy stage') {
+        stage('deploy') {
             steps {
                 withmaven (maven : 'Apache Maven 3.5.2')
-                    echo 'mvn deploy'
+                    sh 'mvn deploy'
             }
         }
         }
